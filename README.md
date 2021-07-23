@@ -1,5 +1,7 @@
 # Shopping-Spree
-A website that gathers the cheapest school supplies for you to buy
+A website that gathers the cheapest school supplies for you to buy.
+
+Submission for Explore Hacks 2021
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
