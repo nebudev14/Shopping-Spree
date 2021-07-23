@@ -1,4 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
+const SerpApi = require('google-search-results-nodejs');
+require('dotenv').config();
 
 type Data = {
   name: string
