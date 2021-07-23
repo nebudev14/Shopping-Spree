@@ -14,18 +14,15 @@ export default function handler(
       const params = {
         q: item,
         tbm: "shop",
-        location: "Dallas",
+        location: "NY",
         hl: "en",
         gl: "us"
       };
 
       const callback = function(data: any) {
-        console.log(data['shopping_results']);
+        res.status(200).json({ message: data['shopping_results'] });
       };
-
       search.json(params, callback);
-
-      res.status(200).json({ message: 'John Doe' });
       break;
     
     default:
