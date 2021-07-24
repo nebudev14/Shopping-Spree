@@ -20,8 +20,12 @@ export default function handler(
       };
 
       const callback = function(data: any) {
+        data['shopping_results'].sort(function(a: any, b: any) {
+          return a.extracted_price - b.extracted_price 
+        });
         res.status(200).json({ message: data['shopping_results'] });
       };
+      
       search.json(params, callback);
       break;
     
