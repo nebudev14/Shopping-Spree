@@ -8,6 +8,3 @@ export default function Product(props: any) {
     );
 }
 
-export const getStaticProps: any = async() => {
-    
-}

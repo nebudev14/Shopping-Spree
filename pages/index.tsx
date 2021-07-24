@@ -1,14 +1,17 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 
 import Head from 'next/head';
 import Image from 'next/image';
 
 export default function Home() {
+  const router = useRouter();
 
   const redirectSearch = async (event: any) => {
     event.preventDefault();
-
-    console.log(event.target.name.value);
+    const query = event.target.name.value;
+    const path = `/items/${query}`;
+    router.push(path);
   }
 
 
