@@ -14,8 +14,9 @@ export default function Home() {
 
   return (
     <div className="container">
+      <h1 className="title">Shopping Spree</h1>
       <form onSubmit={redirectSearch} className="formContainer">
-        <label htmlFor="name" className="title">What are you looking for?</label>
+        <label htmlFor="name" className="titleLabel">What are you looking for?</label>
         <input id="name" name="name" type="text" autoComplete="off" className="textBox" required />
         <button type="submit" className="btn">Search</button>
       </form>
@@ -29,6 +30,10 @@ export default function Home() {
           flex-direction: column; 
         }
 
+        .title {
+          font-size: 400%;
+        }
+
         .formContainer {
           display: flex;
           align-items: center;
@@ -36,7 +41,7 @@ export default function Home() {
           flex-direction: column; 
         }
 
-        .title {
+        .titleLabel {
           font-size: 250%;
           margin: 2rem 0 2rem 0;
         }

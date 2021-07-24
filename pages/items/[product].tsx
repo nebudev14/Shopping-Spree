@@ -1,8 +1,6 @@
 import React from "react";
 import axios from 'axios';
 
-import { GetStaticPaths } from "next";
-
 export default function Product(props: any) {
     return  (
         <div>
