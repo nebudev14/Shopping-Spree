@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "google-search-results-nodejs": "^2.0.1",
     "next": "11.0.1",

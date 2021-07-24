@@ -11,9 +11,6 @@ const ItemThumbnail: FunctionComponent = ({item}: any) => {
                 <span className="title">{item.title}</span>
                 <span className="price">{item.price}</span>
                 <style jsx>{`
-                    .title {
-                        color: red;
-                    }
 
                 `}</style>
             </div>
