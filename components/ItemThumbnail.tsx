@@ -1,9 +1,9 @@
 import React from 'react';
+import { FunctionComponent } from 'react'; 
 
 import Link from 'next/link';
 
-
-export default function ItemThumbnail({item}: any) {
+const ItemThumbnail: FunctionComponent = ({item}: any) => {
     return (
         <Link href={`/items/${item.product_id}`}>
             <div className="itemThumbnail">
@@ -20,3 +20,5 @@ export default function ItemThumbnail({item}: any) {
         </Link>
     );
 }
+
+export default ItemThumbnail;
