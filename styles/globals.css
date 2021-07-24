@@ -15,3 +15,6 @@ a {
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: rgb(207, 9, 131);
+}
