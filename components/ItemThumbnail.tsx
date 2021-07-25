@@ -1,9 +1,8 @@
 import React from 'react';
-import { FunctionComponent } from 'react'; 
 
 import Link from 'next/link';
 
-const ItemThumbnail: FunctionComponent = ({item}: any) => {
+const ItemThumbnail: any = ({item}: any) => {
     return (
         <Link href={`/items/${item.product_id}`}>
             <div className="itemThumbnail">
@@ -11,7 +10,9 @@ const ItemThumbnail: FunctionComponent = ({item}: any) => {
                 <span className="title">{item.title}</span>
                 <span className="price">{item.price}</span>
                 <style jsx>{`
+                    .itemThumbnail {
 
+                    }
                 `}</style>
             </div>
         </Link>
