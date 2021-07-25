@@ -54,7 +54,7 @@ export const getServerSideProps: any = async (context: any) => {
     await (async () => {
         const allResults = await axios({
             method: 'GET',
-            url: 'http://localhost:3000/api/server',
+            url: 'http://localhost:3000/api/productList',
             data: body
         });
         results = allResults.data.message;
