@@ -7,14 +7,15 @@ import {
   Marker
 } from "react-google-maps";
 
+
 const defaultOptions = { scrollwheel: false };
 
-const Map: any = ({lat}: any, {lng}: any) => { 
+const Map: any = ({lat, lng}: any) => { 
 
     const RegularMap = withScriptjs(
         withGoogleMap(props => (
           <GoogleMap
-            defaultZoom={8}
+            defaultZoom={15}
             defaultCenter={ { lat: lat, lng: lng } }
             defaultOptions={ defaultOptions }
           >
@@ -26,11 +27,10 @@ const Map: any = ({lat}: any, {lng}: any) => {
       const loadingElementStyle = { height: '100%' };
       const containerElementStyle = { height: '280px' };
       const mapElementStyle = { height: '100%' };
-      const url = "https://maps.googleapis.com/maps/api/js?key=" + process.env.MAP_KEY;
 
     return (
         <RegularMap
-        googleMapURL={url}
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_MAP_KEY}`}
         loadingElement={<div style={ loadingElementStyle } />}
         containerElement={<div style={ containerElementStyle } />}
         mapElement={<div style={ mapElementStyle } />}

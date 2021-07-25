@@ -33,7 +33,7 @@ export default function productResult(props: any) {
                 <p className="desc">{props.information.product_results.description}</p>
             </div>
             <div className="mapDiv">
-                <Map />
+                <Map lat={40.712776} lng={-74.005974}/>
             </div>
                 <style jsx>{`
                     .container {
