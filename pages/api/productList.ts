@@ -30,7 +30,7 @@ export default function handler(
       break;
     
     default:
-      res.status(400).json({ message: 'Bad request error' }) 
+      res.status(400).json({ message: 'Bad request error' });
       break;
   }
 }
