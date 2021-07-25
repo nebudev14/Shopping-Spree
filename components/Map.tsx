@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React from "react";
+import axios from "axios";
 import {
   withScriptjs,
   withGoogleMap,
@@ -9,6 +10,7 @@ import {
 
 
 const defaultOptions = { scrollwheel: false };
+
 
 const Map: any = ({lat, lng}: any) => { 
 
@@ -27,6 +29,8 @@ const Map: any = ({lat, lng}: any) => {
       const loadingElementStyle = { height: '100%' };
       const containerElementStyle = { height: '280px' };
       const mapElementStyle = { height: '100%' };
+
+
 
     return (
         <RegularMap

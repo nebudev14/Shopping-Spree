@@ -1,18 +1,11 @@
+// @ts-nocheck
 import React from "react";
 import axios from "axios";
 import Link from "next/link";
 
 import Map from "../../components/Map";
-import {
-    withScriptjs,
-    withGoogleMap,
-    GoogleMap,
-    Marker
-  } from "react-google-maps";
 
 export default function productResult(props: any) {
-
-    
 
     return  (
         <div>
@@ -33,7 +26,7 @@ export default function productResult(props: any) {
                 <p className="desc">{props.information.product_results.description}</p>
             </div>
             <div className="mapDiv">
-                <Map lat={40.712776} lng={-74.005974}/>
+                <Map lat={props.locationData.geometry.location.lat} lng={props.locationData.geometry.location.lng} />
             </div>
                 <style jsx>{`
                     .container {
@@ -101,6 +94,7 @@ export default function productResult(props: any) {
 }
 
 export const getServerSideProps: any = async (context: any) => {
+    // getting product information using product ID
     var information;
     const {product} = context.params;
     await (async () => {
@@ -111,9 +105,22 @@ export const getServerSideProps: any = async (context: any) => {
         information = itemInfo.data;
     })();
 
+    // getting nearby store
+    var locationData;
+    const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.712776,-74.005974&radius=5000&keyword=${information.sellers_results.online_sellers[0].name}&key=${process.env.NEXT_PUBLIC_MAP_KEY}`;
+    await (async () => {
+        const locationInfo = await axios({
+            method: 'GET',
+            url: url
+        });
+        locationData = locationInfo.data.results[0];
+    })();
+
+    console.log(locationData);
+
     return {
         props: {
-            information
+            information, locationData
         }
         
     }
