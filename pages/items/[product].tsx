@@ -25,6 +25,7 @@ export default function productResult(props: any) {
             <div className="descDiv">
                 <p className="desc">{props.information.product_results.description}</p>
             </div>
+            <h2 className="nearby">You can buy this product at</h2>
             <div className="mapDiv">
                 <Map lat={props.locationData.geometry.location.lat} lng={props.locationData.geometry.location.lng} />
             </div>
@@ -86,6 +87,10 @@ export default function productResult(props: any) {
                     .desc {
                         font-size: 130%;
                         padding: 4rem;
+                    }
+
+                    .nearby {
+                        text-align: center;
                     }
 
                 `}</style>

@@ -18,7 +18,6 @@ const ItemThumbnail: any = ({item}: any) => {
                 <div className="itemInfo">
                     <span className="title">{item.title}</span>
                     <span className="price"><strong>Price:</strong> {item.price}</span>
-            
                 </div>
                 <style jsx>{`
 
