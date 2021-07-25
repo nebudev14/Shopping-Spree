@@ -12,7 +12,7 @@ export default function productResult(props: any) {
                 <h2 className="price">{props.information.product_results.prices[0]}</h2>
                 <h2 className="rating">Rating: {props.information.product_results.rating}/5</h2>
                 <h2 className="reviewNum">Number of reviews: {props.information.product_results.reviews}</h2>
-                <Link href={props.information.seller_results.}>
+                <Link href={props.information.sellers_results.online_sellers[0].link}>
                     <button className="btn">Purchase</button>
                 </Link>
             </div>  
