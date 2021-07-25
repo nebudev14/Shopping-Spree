@@ -3,14 +3,22 @@ import React from 'react';
 import Link from 'next/link';
 
 const ItemThumbnail: any = ({item}: any) => {
+    var link: string = "";
+    if (item.product_id == undefined) {
+        link = item.link;
+    }
+    else {
+        link = `/items/${item.product_id}`
+    }
+    
     return (
-        
-        <Link href={`/items/${item.product_id}`}>
+        <Link href={link}>
             <div className="itemThumbnail">
                 <img src={item.thumbnail} className="itemImage"/>
                 <div className="itemInfo">
                     <span className="title">{item.title}</span>
                     <span className="price"><strong>Price:</strong> {item.price}</span>
+            
                 </div>
                 <style jsx>{`
 

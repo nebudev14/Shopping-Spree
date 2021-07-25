@@ -3,30 +3,39 @@ import axios from "axios";
 
 export default function productResult(props: any) {
     return  (
-        <div>
-            <h1>i am a product result</h1>
+        <div className="container">
+            <img src={props.information.product_results.media[0].link} className="image"/>
+            <h1 className="title">{props.information.product_results.title}</h1>
+
+            <style jsx>{`
+                .container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                }
+
+            `}</style>
         </div>
     );
 }
 
 export const getServerSideProps: any = async (context: any) => {
     var information;
-    const {productID} = context.params;
-    var body = {
-        "id": productID
-    };
+    const {product} = context.params;
     await (async () => {
         const itemInfo = await axios({
             method: 'GET',
-            url: 'http://localhost:3000/api/productList',
-            data: body
+            url: `https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&location=NY&product_id=${product}&key=${process.env.KEY}`
         });
-        information = itemInfo.data.message;
+        information = itemInfo.data;
     })();
+
+    console.log(information);
 
     return {
         props: {
             information
         }
+        
     }
 }
