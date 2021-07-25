@@ -1,9 +1,19 @@
 import React from "react";
 import axios from "axios";
-
 import Link from "next/link";
 
+import Map from "../../components/Map";
+import {
+    withScriptjs,
+    withGoogleMap,
+    GoogleMap,
+    Marker
+  } from "react-google-maps";
+
 export default function productResult(props: any) {
+
+    
+
     return  (
         <div>
             <div className="container">
@@ -21,6 +31,9 @@ export default function productResult(props: any) {
             </div>
             <div className="descDiv">
                 <p className="desc">{props.information.product_results.description}</p>
+            </div>
+            <div className="mapDiv">
+                <Map />
             </div>
                 <style jsx>{`
                     .container {
